@@ -1,0 +1,1260 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E94326132749AEFF005D074B /* sunshine_helperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94326122749AEFF005D074B /* sunshine_helperApp.swift */; };
+		E94326152749AEFF005D074B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94326142749AEFF005D074B /* ContentView.swift */; };
+		E94326172749AF00005D074B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E94326162749AF00005D074B /* Assets.xcassets */; };
+		E943261A2749AF00005D074B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E94326192749AF00005D074B /* Preview Assets.xcassets */; };
+		E94326242749AF00005D074B /* sunshine_helperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94326232749AF00005D074B /* sunshine_helperTests.swift */; };
+		E943262E2749AF00005D074B /* sunshine_helperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E943262D2749AF00005D074B /* sunshine_helperUITests.swift */; };
+		E94326302749AF00005D074B /* sunshine_helperUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E943262F2749AF00005D074B /* sunshine_helperUITestsLaunchTests.swift */; };
+		E94326342749AF00005D074B /* sunshine-helper WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = E94326332749AF00005D074B /* sunshine-helper WatchKit App.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E94326392749AF01005D074B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E94326382749AF01005D074B /* Assets.xcassets */; };
+		E943263F2749AF01005D074B /* sunshine-helper WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E943263E2749AF01005D074B /* sunshine-helper WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E94326442749AF01005D074B /* sunshine_helperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94326432749AF01005D074B /* sunshine_helperApp.swift */; };
+		E94326462749AF01005D074B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94326452749AF01005D074B /* ContentView.swift */; };
+		E94326482749AF01005D074B /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94326472749AF01005D074B /* NotificationController.swift */; };
+		E943264A2749AF01005D074B /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94326492749AF01005D074B /* NotificationView.swift */; };
+		E943264C2749AF01005D074B /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E943264B2749AF01005D074B /* ComplicationController.swift */; };
+		E943264E2749AF01005D074B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E943264D2749AF01005D074B /* Assets.xcassets */; };
+		E94326512749AF01005D074B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E94326502749AF01005D074B /* Preview Assets.xcassets */; };
+		E943265D2749AF02005D074B /* sunshine_helper_WatchKit_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E943265C2749AF02005D074B /* sunshine_helper_WatchKit_AppTests.swift */; };
+		E94326672749AF02005D074B /* sunshine_helper_WatchKit_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94326662749AF02005D074B /* sunshine_helper_WatchKit_AppUITests.swift */; };
+		E94326692749AF02005D074B /* sunshine_helper_WatchKit_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94326682749AF02005D074B /* sunshine_helper_WatchKit_AppUITestsLaunchTests.swift */; };
+		E95901B5274ADEF700801611 /* AppIcons in Resources */ = {isa = PBXBuildFile; fileRef = E95901B4274ADEF700801611 /* AppIcons */; };
+		E95901B7275172D500801611 /* sunshine-uv-exposure-shared-api.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95901B6275172D500801611 /* sunshine-uv-exposure-shared-api.swift */; };
+		E95901B8275172D500801611 /* sunshine-uv-exposure-shared-api.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95901B6275172D500801611 /* sunshine-uv-exposure-shared-api.swift */; };
+		E9E0E40E2755695800322FFE /* shared-ui-components.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E0E40D2755695800322FFE /* shared-ui-components.swift */; };
+		E9E0E40F2755695800322FFE /* shared-ui-components.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E0E40D2755695800322FFE /* shared-ui-components.swift */; };
+		E9E0E41227557C5A00322FFE /* wrappinghstack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E0E41127557C5A00322FFE /* wrappinghstack.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E94326202749AF00005D074B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E94326072749AEFF005D074B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E943260E2749AEFF005D074B;
+			remoteInfo = "sunshine-helper";
+		};
+		E943262A2749AF00005D074B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E94326072749AEFF005D074B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E943260E2749AEFF005D074B;
+			remoteInfo = "sunshine-helper";
+		};
+		E94326352749AF00005D074B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E94326072749AEFF005D074B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E94326322749AF00005D074B;
+			remoteInfo = "sunshine-helper WatchKit App";
+		};
+		E94326402749AF01005D074B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E94326072749AEFF005D074B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E943263D2749AF01005D074B;
+			remoteInfo = "sunshine-helper WatchKit Extension";
+		};
+		E94326592749AF02005D074B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E94326072749AEFF005D074B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E943263D2749AF01005D074B;
+			remoteInfo = "sunshine-helper WatchKit Extension";
+		};
+		E94326632749AF02005D074B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E94326072749AEFF005D074B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E94326322749AF00005D074B;
+			remoteInfo = "sunshine-helper WatchKit App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E943266F2749AF02005D074B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E943263F2749AF01005D074B /* sunshine-helper WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E94326732749AF02005D074B /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				E94326342749AF00005D074B /* sunshine-helper WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		E943260F2749AEFF005D074B /* sunshine-helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sunshine-helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E94326122749AEFF005D074B /* sunshine_helperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sunshine_helperApp.swift; sourceTree = "<group>"; };
+		E94326142749AEFF005D074B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E94326162749AF00005D074B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E94326192749AF00005D074B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E943261F2749AF00005D074B /* sunshine-helperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "sunshine-helperTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E94326232749AF00005D074B /* sunshine_helperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sunshine_helperTests.swift; sourceTree = "<group>"; };
+		E94326292749AF00005D074B /* sunshine-helperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "sunshine-helperUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E943262D2749AF00005D074B /* sunshine_helperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sunshine_helperUITests.swift; sourceTree = "<group>"; };
+		E943262F2749AF00005D074B /* sunshine_helperUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sunshine_helperUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E94326332749AF00005D074B /* sunshine-helper WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sunshine-helper WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E94326382749AF01005D074B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E943263E2749AF01005D074B /* sunshine-helper WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "sunshine-helper WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E94326432749AF01005D074B /* sunshine_helperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sunshine_helperApp.swift; sourceTree = "<group>"; };
+		E94326452749AF01005D074B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E94326472749AF01005D074B /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		E94326492749AF01005D074B /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		E943264B2749AF01005D074B /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		E943264D2749AF01005D074B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E94326502749AF01005D074B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E94326522749AF01005D074B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E94326532749AF01005D074B /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		E94326582749AF02005D074B /* sunshine-helper WatchKit AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "sunshine-helper WatchKit AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E943265C2749AF02005D074B /* sunshine_helper_WatchKit_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sunshine_helper_WatchKit_AppTests.swift; sourceTree = "<group>"; };
+		E94326622749AF02005D074B /* sunshine-helper WatchKit AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "sunshine-helper WatchKit AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E94326662749AF02005D074B /* sunshine_helper_WatchKit_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sunshine_helper_WatchKit_AppUITests.swift; sourceTree = "<group>"; };
+		E94326682749AF02005D074B /* sunshine_helper_WatchKit_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sunshine_helper_WatchKit_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E95901B3274ABD0700801611 /* sunshine-helper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "sunshine-helper.entitlements"; sourceTree = "<group>"; };
+		E95901B4274ADEF700801611 /* AppIcons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcons; sourceTree = "<group>"; };
+		E95901B6275172D500801611 /* sunshine-uv-exposure-shared-api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "sunshine-uv-exposure-shared-api.swift"; sourceTree = "<group>"; };
+		E9E0E40D2755695800322FFE /* shared-ui-components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "shared-ui-components.swift"; sourceTree = "<group>"; };
+		E9E0E41127557C5A00322FFE /* wrappinghstack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wrappinghstack.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E943260C2749AEFF005D074B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E943261C2749AF00005D074B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E94326262749AF00005D074B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E943263B2749AF01005D074B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E94326552749AF02005D074B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E943265F2749AF02005D074B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E94326062749AEFF005D074B = {
+			isa = PBXGroup;
+			children = (
+				E9E0E40C2755693100322FFE /* shared */,
+				E95901B4274ADEF700801611 /* AppIcons */,
+				E94326112749AEFF005D074B /* sunshine-helper */,
+				E94326222749AF00005D074B /* sunshine-helperTests */,
+				E943262C2749AF00005D074B /* sunshine-helperUITests */,
+				E94326372749AF00005D074B /* sunshine-helper WatchKit App */,
+				E94326422749AF01005D074B /* sunshine-helper WatchKit Extension */,
+				E943265B2749AF02005D074B /* sunshine-helper WatchKit AppTests */,
+				E94326652749AF02005D074B /* sunshine-helper WatchKit AppUITests */,
+				E94326102749AEFF005D074B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E94326102749AEFF005D074B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E943260F2749AEFF005D074B /* sunshine-helper.app */,
+				E943261F2749AF00005D074B /* sunshine-helperTests.xctest */,
+				E94326292749AF00005D074B /* sunshine-helperUITests.xctest */,
+				E94326332749AF00005D074B /* sunshine-helper WatchKit App.app */,
+				E943263E2749AF01005D074B /* sunshine-helper WatchKit Extension.appex */,
+				E94326582749AF02005D074B /* sunshine-helper WatchKit AppTests.xctest */,
+				E94326622749AF02005D074B /* sunshine-helper WatchKit AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E94326112749AEFF005D074B /* sunshine-helper */ = {
+			isa = PBXGroup;
+			children = (
+				E95901B3274ABD0700801611 /* sunshine-helper.entitlements */,
+				E94326122749AEFF005D074B /* sunshine_helperApp.swift */,
+				E94326142749AEFF005D074B /* ContentView.swift */,
+				E94326162749AF00005D074B /* Assets.xcassets */,
+				E94326182749AF00005D074B /* Preview Content */,
+			);
+			path = "sunshine-helper";
+			sourceTree = "<group>";
+		};
+		E94326182749AF00005D074B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				E94326192749AF00005D074B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E94326222749AF00005D074B /* sunshine-helperTests */ = {
+			isa = PBXGroup;
+			children = (
+				E94326232749AF00005D074B /* sunshine_helperTests.swift */,
+			);
+			path = "sunshine-helperTests";
+			sourceTree = "<group>";
+		};
+		E943262C2749AF00005D074B /* sunshine-helperUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E943262D2749AF00005D074B /* sunshine_helperUITests.swift */,
+				E943262F2749AF00005D074B /* sunshine_helperUITestsLaunchTests.swift */,
+			);
+			path = "sunshine-helperUITests";
+			sourceTree = "<group>";
+		};
+		E94326372749AF00005D074B /* sunshine-helper WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				E94326382749AF01005D074B /* Assets.xcassets */,
+			);
+			path = "sunshine-helper WatchKit App";
+			sourceTree = "<group>";
+		};
+		E94326422749AF01005D074B /* sunshine-helper WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E94326432749AF01005D074B /* sunshine_helperApp.swift */,
+				E94326452749AF01005D074B /* ContentView.swift */,
+				E94326472749AF01005D074B /* NotificationController.swift */,
+				E94326492749AF01005D074B /* NotificationView.swift */,
+				E943264B2749AF01005D074B /* ComplicationController.swift */,
+				E943264D2749AF01005D074B /* Assets.xcassets */,
+				E94326522749AF01005D074B /* Info.plist */,
+				E94326532749AF01005D074B /* PushNotificationPayload.apns */,
+				E943264F2749AF01005D074B /* Preview Content */,
+			);
+			path = "sunshine-helper WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		E943264F2749AF01005D074B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				E94326502749AF01005D074B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E943265B2749AF02005D074B /* sunshine-helper WatchKit AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				E943265C2749AF02005D074B /* sunshine_helper_WatchKit_AppTests.swift */,
+			);
+			path = "sunshine-helper WatchKit AppTests";
+			sourceTree = "<group>";
+		};
+		E94326652749AF02005D074B /* sunshine-helper WatchKit AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E94326662749AF02005D074B /* sunshine_helper_WatchKit_AppUITests.swift */,
+				E94326682749AF02005D074B /* sunshine_helper_WatchKit_AppUITestsLaunchTests.swift */,
+			);
+			path = "sunshine-helper WatchKit AppUITests";
+			sourceTree = "<group>";
+		};
+		E9E0E40C2755693100322FFE /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				E9E0E41027557C4A00322FFE /* wrappingstack */,
+				E95901B6275172D500801611 /* sunshine-uv-exposure-shared-api.swift */,
+				E9E0E40D2755695800322FFE /* shared-ui-components.swift */,
+			);
+			path = shared;
+			sourceTree = "<group>";
+		};
+		E9E0E41027557C4A00322FFE /* wrappingstack */ = {
+			isa = PBXGroup;
+			children = (
+				E9E0E41127557C5A00322FFE /* wrappinghstack.swift */,
+			);
+			path = wrappingstack;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E943260E2749AEFF005D074B /* sunshine-helper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E94326742749AF02005D074B /* Build configuration list for PBXNativeTarget "sunshine-helper" */;
+			buildPhases = (
+				E943260B2749AEFF005D074B /* Sources */,
+				E943260C2749AEFF005D074B /* Frameworks */,
+				E943260D2749AEFF005D074B /* Resources */,
+				E94326732749AF02005D074B /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E94326362749AF00005D074B /* PBXTargetDependency */,
+			);
+			name = "sunshine-helper";
+			productName = "sunshine-helper";
+			productReference = E943260F2749AEFF005D074B /* sunshine-helper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E943261E2749AF00005D074B /* sunshine-helperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E94326772749AF02005D074B /* Build configuration list for PBXNativeTarget "sunshine-helperTests" */;
+			buildPhases = (
+				E943261B2749AF00005D074B /* Sources */,
+				E943261C2749AF00005D074B /* Frameworks */,
+				E943261D2749AF00005D074B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E94326212749AF00005D074B /* PBXTargetDependency */,
+			);
+			name = "sunshine-helperTests";
+			productName = "sunshine-helperTests";
+			productReference = E943261F2749AF00005D074B /* sunshine-helperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E94326282749AF00005D074B /* sunshine-helperUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E943267A2749AF02005D074B /* Build configuration list for PBXNativeTarget "sunshine-helperUITests" */;
+			buildPhases = (
+				E94326252749AF00005D074B /* Sources */,
+				E94326262749AF00005D074B /* Frameworks */,
+				E94326272749AF00005D074B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E943262B2749AF00005D074B /* PBXTargetDependency */,
+			);
+			name = "sunshine-helperUITests";
+			productName = "sunshine-helperUITests";
+			productReference = E94326292749AF00005D074B /* sunshine-helperUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		E94326322749AF00005D074B /* sunshine-helper WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E94326702749AF02005D074B /* Build configuration list for PBXNativeTarget "sunshine-helper WatchKit App" */;
+			buildPhases = (
+				E94326312749AF00005D074B /* Resources */,
+				E943266F2749AF02005D074B /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E94326412749AF01005D074B /* PBXTargetDependency */,
+			);
+			name = "sunshine-helper WatchKit App";
+			productName = "sunshine-helper WatchKit App";
+			productReference = E94326332749AF00005D074B /* sunshine-helper WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		E943263D2749AF01005D074B /* sunshine-helper WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E943266C2749AF02005D074B /* Build configuration list for PBXNativeTarget "sunshine-helper WatchKit Extension" */;
+			buildPhases = (
+				E943263A2749AF01005D074B /* Sources */,
+				E943263B2749AF01005D074B /* Frameworks */,
+				E943263C2749AF01005D074B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "sunshine-helper WatchKit Extension";
+			productName = "sunshine-helper WatchKit Extension";
+			productReference = E943263E2749AF01005D074B /* sunshine-helper WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		E94326572749AF02005D074B /* sunshine-helper WatchKit AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E943267D2749AF02005D074B /* Build configuration list for PBXNativeTarget "sunshine-helper WatchKit AppTests" */;
+			buildPhases = (
+				E94326542749AF02005D074B /* Sources */,
+				E94326552749AF02005D074B /* Frameworks */,
+				E94326562749AF02005D074B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E943265A2749AF02005D074B /* PBXTargetDependency */,
+			);
+			name = "sunshine-helper WatchKit AppTests";
+			productName = "sunshine-helper WatchKit AppTests";
+			productReference = E94326582749AF02005D074B /* sunshine-helper WatchKit AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E94326612749AF02005D074B /* sunshine-helper WatchKit AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E94326802749AF02005D074B /* Build configuration list for PBXNativeTarget "sunshine-helper WatchKit AppUITests" */;
+			buildPhases = (
+				E943265E2749AF02005D074B /* Sources */,
+				E943265F2749AF02005D074B /* Frameworks */,
+				E94326602749AF02005D074B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E94326642749AF02005D074B /* PBXTargetDependency */,
+			);
+			name = "sunshine-helper WatchKit AppUITests";
+			productName = "sunshine-helper WatchKit AppUITests";
+			productReference = E94326622749AF02005D074B /* sunshine-helper WatchKit AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E94326072749AEFF005D074B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					E943260E2749AEFF005D074B = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					E943261E2749AF00005D074B = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = E943260E2749AEFF005D074B;
+					};
+					E94326282749AF00005D074B = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = E943260E2749AEFF005D074B;
+					};
+					E94326322749AF00005D074B = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					E943263D2749AF01005D074B = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					E94326572749AF02005D074B = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = E943263D2749AF01005D074B;
+					};
+					E94326612749AF02005D074B = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = E94326322749AF00005D074B;
+					};
+				};
+			};
+			buildConfigurationList = E943260A2749AEFF005D074B /* Build configuration list for PBXProject "sunshine-helper" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E94326062749AEFF005D074B;
+			productRefGroup = E94326102749AEFF005D074B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E943260E2749AEFF005D074B /* sunshine-helper */,
+				E943261E2749AF00005D074B /* sunshine-helperTests */,
+				E94326282749AF00005D074B /* sunshine-helperUITests */,
+				E94326322749AF00005D074B /* sunshine-helper WatchKit App */,
+				E943263D2749AF01005D074B /* sunshine-helper WatchKit Extension */,
+				E94326572749AF02005D074B /* sunshine-helper WatchKit AppTests */,
+				E94326612749AF02005D074B /* sunshine-helper WatchKit AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E943260D2749AEFF005D074B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E95901B5274ADEF700801611 /* AppIcons in Resources */,
+				E943261A2749AF00005D074B /* Preview Assets.xcassets in Resources */,
+				E94326172749AF00005D074B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E943261D2749AF00005D074B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E94326272749AF00005D074B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E94326312749AF00005D074B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E94326392749AF01005D074B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E943263C2749AF01005D074B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E94326512749AF01005D074B /* Preview Assets.xcassets in Resources */,
+				E943264E2749AF01005D074B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E94326562749AF02005D074B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E94326602749AF02005D074B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E943260B2749AEFF005D074B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E95901B7275172D500801611 /* sunshine-uv-exposure-shared-api.swift in Sources */,
+				E94326152749AEFF005D074B /* ContentView.swift in Sources */,
+				E9E0E40E2755695800322FFE /* shared-ui-components.swift in Sources */,
+				E94326132749AEFF005D074B /* sunshine_helperApp.swift in Sources */,
+				E9E0E41227557C5A00322FFE /* wrappinghstack.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E943261B2749AF00005D074B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E94326242749AF00005D074B /* sunshine_helperTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E94326252749AF00005D074B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E943262E2749AF00005D074B /* sunshine_helperUITests.swift in Sources */,
+				E94326302749AF00005D074B /* sunshine_helperUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E943263A2749AF01005D074B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E95901B8275172D500801611 /* sunshine-uv-exposure-shared-api.swift in Sources */,
+				E9E0E40F2755695800322FFE /* shared-ui-components.swift in Sources */,
+				E94326482749AF01005D074B /* NotificationController.swift in Sources */,
+				E94326462749AF01005D074B /* ContentView.swift in Sources */,
+				E943264C2749AF01005D074B /* ComplicationController.swift in Sources */,
+				E94326442749AF01005D074B /* sunshine_helperApp.swift in Sources */,
+				E943264A2749AF01005D074B /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E94326542749AF02005D074B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E943265D2749AF02005D074B /* sunshine_helper_WatchKit_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E943265E2749AF02005D074B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E94326692749AF02005D074B /* sunshine_helper_WatchKit_AppUITestsLaunchTests.swift in Sources */,
+				E94326672749AF02005D074B /* sunshine_helper_WatchKit_AppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E94326212749AF00005D074B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E943260E2749AEFF005D074B /* sunshine-helper */;
+			targetProxy = E94326202749AF00005D074B /* PBXContainerItemProxy */;
+		};
+		E943262B2749AF00005D074B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E943260E2749AEFF005D074B /* sunshine-helper */;
+			targetProxy = E943262A2749AF00005D074B /* PBXContainerItemProxy */;
+		};
+		E94326362749AF00005D074B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = E94326322749AF00005D074B /* sunshine-helper WatchKit App */;
+			targetProxy = E94326352749AF00005D074B /* PBXContainerItemProxy */;
+		};
+		E94326412749AF01005D074B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E943263D2749AF01005D074B /* sunshine-helper WatchKit Extension */;
+			targetProxy = E94326402749AF01005D074B /* PBXContainerItemProxy */;
+		};
+		E943265A2749AF02005D074B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E943263D2749AF01005D074B /* sunshine-helper WatchKit Extension */;
+			targetProxy = E94326592749AF02005D074B /* PBXContainerItemProxy */;
+		};
+		E94326642749AF02005D074B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E94326322749AF00005D074B /* sunshine-helper WatchKit App */;
+			targetProxy = E94326632749AF02005D074B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E943266A2749AF02005D074B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E943266B2749AF02005D074B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		E943266D2749AF02005D074B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 12;
+				DEVELOPMENT_ASSET_PATHS = "\"sunshine-helper WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = SCM7P62X3K;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "sunshine-helper WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "sunshine-helper WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = sunshine_helper_WatchKit_Extension.ComplicationController;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Needed to calculator solar zenith angle";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.07;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codicarts.sunshine-helper.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.5;
+			};
+			name = Debug;
+		};
+		E943266E2749AF02005D074B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 12;
+				DEVELOPMENT_ASSET_PATHS = "\"sunshine-helper WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = SCM7P62X3K;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "sunshine-helper WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "sunshine-helper WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = sunshine_helper_WatchKit_Extension.ComplicationController;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Needed to calculator solar zenith angle";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.07;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codicarts.sunshine-helper.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.5;
+			};
+			name = Release;
+		};
+		E94326712749AF02005D074B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 12;
+				DEVELOPMENT_TEAM = SCM7P62X3K;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = sunshine_helper_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = "sunshine-helper WatchKit App";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.codicarts.sunshine-helper";
+				MARKETING_VERSION = 1.07;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codicarts.sunshine-helper.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.5;
+			};
+			name = Debug;
+		};
+		E94326722749AF02005D074B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 12;
+				DEVELOPMENT_TEAM = SCM7P62X3K;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = sunshine_helper_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = "sunshine-helper WatchKit App";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.codicarts.sunshine-helper";
+				MARKETING_VERSION = 1.07;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codicarts.sunshine-helper.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.5;
+			};
+			name = Release;
+		};
+		E94326752749AF02005D074B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "sunshine-helper/sunshine-helper.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 12;
+				DEVELOPMENT_ASSET_PATHS = "\"sunshine-helper/Preview Content\"";
+				DEVELOPMENT_TEAM = SCM7P62X3K;
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App uses gps coords sans decimals to calculate solar angle";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.07;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codicarts.sunshine-helper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E94326762749AF02005D074B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "sunshine-helper/sunshine-helper.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 12;
+				DEVELOPMENT_ASSET_PATHS = "\"sunshine-helper/Preview Content\"";
+				DEVELOPMENT_TEAM = SCM7P62X3K;
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App uses gps coords sans decimals to calculate solar angle";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.07;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codicarts.sunshine-helper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E94326782749AF02005D074B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SCM7P62X3K;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codicarts.sunshine-helperTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sunshine-helper.app/sunshine-helper";
+			};
+			name = Debug;
+		};
+		E94326792749AF02005D074B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SCM7P62X3K;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codicarts.sunshine-helperTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sunshine-helper.app/sunshine-helper";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E943267B2749AF02005D074B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SCM7P62X3K;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codicarts.sunshine-helperUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "sunshine-helper";
+			};
+			name = Debug;
+		};
+		E943267C2749AF02005D074B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SCM7P62X3K;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codicarts.sunshine-helperUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "sunshine-helper";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E943267E2749AF02005D074B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SCM7P62X3K;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codicarts.sunshine-helper-WatchKit-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sunshine-helper WatchKit Extension.appex/sunshine-helper WatchKit Extension";
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Debug;
+		};
+		E943267F2749AF02005D074B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SCM7P62X3K;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codicarts.sunshine-helper-WatchKit-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sunshine-helper WatchKit Extension.appex/sunshine-helper WatchKit Extension";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Release;
+		};
+		E94326812749AF02005D074B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SCM7P62X3K;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codicarts.sunshine-helper-WatchKit-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "sunshine-helper WatchKit App";
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Debug;
+		};
+		E94326822749AF02005D074B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SCM7P62X3K;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codicarts.sunshine-helper-WatchKit-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "sunshine-helper WatchKit App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E943260A2749AEFF005D074B /* Build configuration list for PBXProject "sunshine-helper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E943266A2749AF02005D074B /* Debug */,
+				E943266B2749AF02005D074B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E943266C2749AF02005D074B /* Build configuration list for PBXNativeTarget "sunshine-helper WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E943266D2749AF02005D074B /* Debug */,
+				E943266E2749AF02005D074B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E94326702749AF02005D074B /* Build configuration list for PBXNativeTarget "sunshine-helper WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E94326712749AF02005D074B /* Debug */,
+				E94326722749AF02005D074B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E94326742749AF02005D074B /* Build configuration list for PBXNativeTarget "sunshine-helper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E94326752749AF02005D074B /* Debug */,
+				E94326762749AF02005D074B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E94326772749AF02005D074B /* Build configuration list for PBXNativeTarget "sunshine-helperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E94326782749AF02005D074B /* Debug */,
+				E94326792749AF02005D074B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E943267A2749AF02005D074B /* Build configuration list for PBXNativeTarget "sunshine-helperUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E943267B2749AF02005D074B /* Debug */,
+				E943267C2749AF02005D074B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E943267D2749AF02005D074B /* Build configuration list for PBXNativeTarget "sunshine-helper WatchKit AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E943267E2749AF02005D074B /* Debug */,
+				E943267F2749AF02005D074B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E94326802749AF02005D074B /* Build configuration list for PBXNativeTarget "sunshine-helper WatchKit AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E94326812749AF02005D074B /* Debug */,
+				E94326822749AF02005D074B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E94326072749AEFF005D074B /* Project object */;
+}
