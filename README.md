@@ -13,6 +13,8 @@ The modern computer-age lifestyle of the western world, especially with COVID me
   * Body parts/areas exposed to sun picker
   * Sky Condition Picker
 * Adjust layout/components to allow decent UX on desktop/phone/watch
+### In progress:
+* Currently in contact with the NILU researchers that own the FastRT project, and they are making their code available once again via GPL. Thus I'll soon be able to port their simulation to run locally on-device.
 ### Todo:
 * Option for Daily notification reminder with amount of sun needed that day
 * Add UI Components for manual cloud condition data entry
