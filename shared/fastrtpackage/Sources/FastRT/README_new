@@ -1,0 +1,8 @@
+You may need to have Perl 5, GNU make and GNU C installed. You may obtain them for free from: www.gnu.org 
+Windows users may install cygwin (www.cygwin.com)
+
+Compile code by typing 'make'
+
+Run instructions:
+fastrt -h
+perl check_spectrum.pl -h

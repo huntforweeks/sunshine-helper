@@ -11,7 +11,7 @@ struct ContentView: View {
 //    @Environment(\.managedObjectContext) private var viewContext
     
     @ObservedObject private var viewModel = ContentViewModel()
-    @State public var body_exposed_percentage = 26.0
+    @State public var body_exposed_percentage = UserDefaults.standard.object(forKey: "body_exposed_percentage") != nil ? UserDefaults.standard.double(forKey: "body_exposed_percentage") : 26.0
     @State public var toggle_editing = true
     
     var body: some View {
@@ -100,7 +100,7 @@ struct ContentView: View {
     func get_exposure_button_handler()
     {
         self.toggle_editing = false
-        self.viewModel.skin_exposed_percent = Int(self.body_exposed_percentage)
+        self.viewModel.skin_exposed_percent = self.body_exposed_percentage
         
         self.viewModel.getExposure()
     }

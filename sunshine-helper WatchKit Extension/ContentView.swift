@@ -72,7 +72,7 @@ struct ContentView: View {
     func get_exposure_button_handler()
     {
         self.toggle_editing = false
-        self.viewModel.skin_exposed_percent = Int(self.body_exposed_percentage)
+        self.viewModel.skin_exposed_percent = self.body_exposed_percentage
         
         self.viewModel.getExposure()
     }

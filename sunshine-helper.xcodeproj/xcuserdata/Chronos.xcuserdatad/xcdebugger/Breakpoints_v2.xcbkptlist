@@ -132,5 +132,195 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9F51A5D7-AC0E-413A-8AE6-B992C6366FD0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shared/fastrtpackage/Sources/FastRT/include/fastrt_.h"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0109A90E-6CB8-4E6C-A199-09157EFD6139"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shared/fastrtpackage/Sources/FastRT/ascii.c"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "239"
+            endingLineNumber = "239"
+            landmarkName = "swift_package_file_access_shim(filename, resource_path_out)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "0109A90E-6CB8-4E6C-A199-09157EFD6139 - 3542dd24bbf6ba3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "swift_package_file_access_shim"
+                  moduleName = "FastRT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Chronos/dev/sunshine-helper/shared/fastrtpackage/Sources/FastRT/ascii.c"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "235"
+                  endingLineNumber = "235"
+                  offsetFromSymbolStart = "288">
+               </Location>
+               <Location
+                  uuid = "0109A90E-6CB8-4E6C-A199-09157EFD6139 - 3542dd24bbf6ba3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "swift_package_file_access_shim"
+                  moduleName = "FastRT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Chronos/dev/sunshine-helper/shared/fastrtpackage/Sources/FastRT/ascii.c"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "235"
+                  endingLineNumber = "235"
+                  offsetFromSymbolStart = "299">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "776FA926-ED49-4A3B-BB7F-9D04918C26F1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shared/fastrtpackage/Sources/FastRT/ascii.c"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "245"
+            endingLineNumber = "245"
+            landmarkName = "swift_package_file_access_shim(filename, resource_path_out)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "776FA926-ED49-4A3B-BB7F-9D04918C26F1 - 3542dd24bbf6c75"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "swift_package_file_access_shim"
+                  moduleName = "FastRT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Chronos/dev/sunshine-helper/shared/fastrtpackage/Sources/FastRT/ascii.c"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "245"
+                  endingLineNumber = "245"
+                  offsetFromSymbolStart = "397">
+               </Location>
+               <Location
+                  uuid = "776FA926-ED49-4A3B-BB7F-9D04918C26F1 - 3542dd24bbf6c75"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "swift_package_file_access_shim"
+                  moduleName = "FastRT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Chronos/dev/sunshine-helper/shared/fastrtpackage/Sources/FastRT/ascii.c"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "245"
+                  endingLineNumber = "245"
+                  offsetFromSymbolStart = "331">
+               </Location>
+               <Location
+                  uuid = "776FA926-ED49-4A3B-BB7F-9D04918C26F1 - 3542dd24bbf6c75"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "swift_package_file_access_shim"
+                  moduleName = "FastRT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Chronos/dev/sunshine-helper/shared/fastrtpackage/Sources/FastRT/ascii.c"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "245"
+                  endingLineNumber = "245"
+                  offsetFromSymbolStart = "322">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5A4DBA9B-EB25-416F-BF81-CB40BB8520B2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shared/fastrtpackage/Sources/FastRT/ascii.c"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "239"
+            endingLineNumber = "239"
+            landmarkName = "swift_package_file_access_shim(filename, resource_path_out)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "5A4DBA9B-EB25-416F-BF81-CB40BB8520B2 - 3542dd24bbf6cf9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "swift_package_file_access_shim"
+                  moduleName = "FastRT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Chronos/dev/sunshine-helper/shared/fastrtpackage/Sources/FastRT/ascii.c"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "241"
+                  endingLineNumber = "241"
+                  offsetFromSymbolStart = "355">
+               </Location>
+               <Location
+                  uuid = "5A4DBA9B-EB25-416F-BF81-CB40BB8520B2 - 3542dd24bbf6b3f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "swift_package_file_access_shim"
+                  moduleName = "FastRT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Chronos/dev/sunshine-helper/shared/fastrtpackage/Sources/FastRT/ascii.c"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "239"
+                  endingLineNumber = "239"
+                  offsetFromSymbolStart = "288">
+               </Location>
+               <Location
+                  uuid = "5A4DBA9B-EB25-416F-BF81-CB40BB8520B2 - 3542dd24bbf6b3f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "swift_package_file_access_shim"
+                  moduleName = "FastRT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Chronos/dev/sunshine-helper/shared/fastrtpackage/Sources/FastRT/ascii.c"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "239"
+                  endingLineNumber = "239"
+                  offsetFromSymbolStart = "279">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

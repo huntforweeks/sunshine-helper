@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreLocation
+import FastRT
 
 enum e_day_of_year_mode: Int {
     case e_day_of_year_around_noon
@@ -41,7 +42,6 @@ extension String {
 }
 
 class ContentViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
-    //var htmlstringattributed: NSAttributedString
     @Published var htmlstring: String
     
     @Published var authorizationStatus: CLAuthorizationStatus
@@ -54,17 +54,13 @@ class ContentViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     @Published public var selected_sky_condition = e_sky_condition.e_sky_cloudless
     @Published public var selected_time_of_day = e_time_of_day_mode.e_time_of_day_around_noon
-    @Published public var skin_exposed_percent = 25
+    @Published public var skin_exposed_percent = UserDefaults.standard.object(forKey: "body_exposed_percentage") != nil ? UserDefaults.standard.double(forKey: "body_exposed_percentage") : 26.0
     @Published public var chosen_date = Date()
     @Published public var selected_skin_type = 3
     
     private let debug_enabled_flag = false
     
     private let locationManager: CLLocationManager
-
-//    init(_ htmlstring: NSAttributedString) {
-//       self.htmlstring = htmlstring
-//    }
     
     override init() {
         htmlstring = "nohtmlyet"
@@ -105,8 +101,8 @@ class ContentViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     func updateResultsFromHTML(string: String)
     {
 //        let pattern = "(?s).*vitamin.*(?<vitd>\\d+:\\d+).*sunburn.*(?<sunburn>\\d+:\\d+)"
-        let pattern1 = "(?s).*vitamin.*(\\d+:\\d+).*sunburn.*"
-        let pattern2 = "(?s).*vitamin.*sunburn.*(\\d+:\\d+)"
+        let pattern1 = "(?s).*vitamin.*(\\d+:\\s*\\d+).*sunburn.*"
+        let pattern2 = "(?s).*vitamin.*sunburn.*(\\d+:s*\\d+)"
         var part1 = Substring()
         var part2 = Substring()
 
@@ -144,6 +140,9 @@ class ContentViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     func getExposure()
     {
+        print("Woo yeah \(FastRT.woo_yeah())!")
+        return;
+        
         self.loaded = false
         self.loading = true
         
@@ -189,7 +188,7 @@ class ContentViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
             URLQueryItem(name: "exposure_timing", value: self.selected_time_of_day == e_time_of_day_mode.e_time_of_day_around_noon ? "0" : "1"),
             URLQueryItem(name: "start_time", value: String(rounded_hour_utc)),
             URLQueryItem(name: "UVI_flag", value: "0"),
-            URLQueryItem(name: "body_exposure", value: String(self.skin_exposed_percent)),
+            URLQueryItem(name: "body_exposure", value: String(round(self.skin_exposed_percent))),
             URLQueryItem(name: "dietary_equivalent", value: "1000"),
             URLQueryItem(name: "sky_condition", value: String(self.selected_sky_condition.rawValue)),
             URLQueryItem(name: "aerosol_specification", value: "0"),

@@ -1,0 +1,54 @@
+#/************************************************************************/
+#/*----------------------------------------------------------------------*/
+#/* Quality Assurance/Control program for diagnosis of submitted files   */
+#/* containing global (hemispherical) UV spectra for the SUVDAMA/EDUCE   */ 
+#/* database.                                                            */
+#/*                                                                      */
+#/* Author: Ola Engelsen                                                 */
+#/*        Norwegian Institute for Air Research                          */
+#/*        N-9296 Tromso,                                                */
+#/*        Norway                                                        */
+#/*        Email: ola.engelsen@nilu.no                                   */
+#/*                                                                      */
+#/*----------------------------------------------------------------------*/
+#/* Copyright (C) 2001 Ola Engelsen                                      */
+#/*                                                                      */
+#/* This program is free software; you can redistribute it and/or modify */
+#/* it under the terms of the GNU General Public License as published by */
+#/* the Free Software Foundation; either version 1, or (at your option)  */
+#/* any later version.                                                   */
+#/*                                                                      */
+#/* This program is distributed in the hope that it will be useful,      */
+#/* but WITHOUT ANY WARRANTY; without even the implied warranty of       */
+#/* MERCHANTABILITY of FITNESS FOR A PARTICULAR PURPOSE. See the         */
+#/* GNU General Public License for more details.                         */
+#/*                                                                      */
+#/* To obtain a copy of the GNU General Public License write to the      */
+#/* Free Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139,   */
+#/* USA.                                                                 */
+#/*----------------------------------------------------------------------*/
+#/************************************************************************/
+
+Quality indicator program of submitted files of
+global (hemispherical) UV spectra for the SUVDAMA database.
+
+First the program must be compiled. This is e.g., done by writing 'make'
+at the Unix command prompt. You may need to have gmake and gcc installed.
+
+Usage: perl check_spectrum.pl [-hf]
+ -h prints this message.
+ -f filename (including path from current directory)
+ -v Output includes diagnosis message.
+
+Examples:
+perl ./check_spectrum.pl -v -f ./spectra_clearsky/se_smhi_nrk/1995/bre006/08051332.gxz
+
+Output: Table number <number>: diagnosis message number (diagnosis message)
+
+The diagnosis number (and message) is one of
+0 (Predominantly clear sky)
+1 (Wavelength incorrectly specified)
+2 (Irradiance incorrectly specified)
+3 (Broken clouds, high albedo or possible measurement error)
+4 (Significant cloud/aerosol veil or possible measurement error)
+

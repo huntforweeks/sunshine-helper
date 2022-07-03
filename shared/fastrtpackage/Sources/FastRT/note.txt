@@ -1,0 +1,1 @@
+../fastrt generated from compilation with fastrt_old.c because compiler does not work.
