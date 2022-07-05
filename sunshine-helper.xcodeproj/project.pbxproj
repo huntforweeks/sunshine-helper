@@ -27,9 +27,15 @@
 		E943265D2749AF02005D074B /* sunshine_helper_WatchKit_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E943265C2749AF02005D074B /* sunshine_helper_WatchKit_AppTests.swift */; };
 		E94326672749AF02005D074B /* sunshine_helper_WatchKit_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94326662749AF02005D074B /* sunshine_helper_WatchKit_AppUITests.swift */; };
 		E94326692749AF02005D074B /* sunshine_helper_WatchKit_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94326682749AF02005D074B /* sunshine_helper_WatchKit_AppUITestsLaunchTests.swift */; };
+		E94A7E372870DAF200CAF968 /* FastRT in Embed Frameworks */ = {isa = PBXBuildFile; productRef = E94A7E352870DAF200CAF968 /* FastRT */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		E94A7E382870DB2400CAF968 /* FastRT in Frameworks */ = {isa = PBXBuildFile; productRef = E94A7E352870DAF200CAF968 /* FastRT */; };
+		E94A7E3A2870DB4600CAF968 /* FastRT in Frameworks */ = {isa = PBXBuildFile; productRef = E94A7E392870DB4600CAF968 /* FastRT */; };
+		E94A7E3B2870DB4600CAF968 /* FastRT in Embed Frameworks */ = {isa = PBXBuildFile; productRef = E94A7E392870DB4600CAF968 /* FastRT */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		E95901B5274ADEF700801611 /* AppIcons in Resources */ = {isa = PBXBuildFile; fileRef = E95901B4274ADEF700801611 /* AppIcons */; };
-		E95901B7275172D500801611 /* sunshine-uv-exposure-shared-api.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95901B6275172D500801611 /* sunshine-uv-exposure-shared-api.swift */; };
-		E95901B8275172D500801611 /* sunshine-uv-exposure-shared-api.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95901B6275172D500801611 /* sunshine-uv-exposure-shared-api.swift */; };
+		E96641F028738B4A002DC8DC /* spectrum-helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C8065F287223A3001CCC3A /* spectrum-helpers.swift */; };
+		E9C8065D2870E071001CCC3A /* sunshine-uv-exposure-shared-api.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95901B6275172D500801611 /* sunshine-uv-exposure-shared-api.swift */; };
+		E9C8065E2870E077001CCC3A /* sunshine-uv-exposure-shared-api.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95901B6275172D500801611 /* sunshine-uv-exposure-shared-api.swift */; };
+		E9C80660287223A3001CCC3A /* spectrum-helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C8065F287223A3001CCC3A /* spectrum-helpers.swift */; };
 		E9E0E40E2755695800322FFE /* shared-ui-components.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E0E40D2755695800322FFE /* shared-ui-components.swift */; };
 		E9E0E40F2755695800322FFE /* shared-ui-components.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E0E40D2755695800322FFE /* shared-ui-components.swift */; };
 		E9E0E41227557C5A00322FFE /* wrappinghstack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E0E41127557C5A00322FFE /* wrappinghstack.swift */; };
@@ -103,6 +109,28 @@
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E94A7E2C2870D97E00CAF968 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E94A7E372870DAF200CAF968 /* FastRT in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E94A7E312870D9CA00CAF968 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E94A7E3B2870DB4600CAF968 /* FastRT in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -133,9 +161,11 @@
 		E94326622749AF02005D074B /* sunshine-helper WatchKit AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "sunshine-helper WatchKit AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E94326662749AF02005D074B /* sunshine_helper_WatchKit_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sunshine_helper_WatchKit_AppUITests.swift; sourceTree = "<group>"; };
 		E94326682749AF02005D074B /* sunshine_helper_WatchKit_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sunshine_helper_WatchKit_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E94A7E292870D97300CAF968 /* fastrtpackage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = fastrtpackage; path = shared/fastrtpackage; sourceTree = "<group>"; };
 		E95901B3274ABD0700801611 /* sunshine-helper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "sunshine-helper.entitlements"; sourceTree = "<group>"; };
 		E95901B4274ADEF700801611 /* AppIcons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcons; sourceTree = "<group>"; };
 		E95901B6275172D500801611 /* sunshine-uv-exposure-shared-api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "sunshine-uv-exposure-shared-api.swift"; sourceTree = "<group>"; };
+		E9C8065F287223A3001CCC3A /* spectrum-helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "spectrum-helpers.swift"; sourceTree = "<group>"; };
 		E9E0E40D2755695800322FFE /* shared-ui-components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "shared-ui-components.swift"; sourceTree = "<group>"; };
 		E9E0E41127557C5A00322FFE /* wrappinghstack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wrappinghstack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,6 +175,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E94A7E382870DB2400CAF968 /* FastRT in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +197,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E94A7E3A2870DB4600CAF968 /* FastRT in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +221,7 @@
 		E94326062749AEFF005D074B = {
 			isa = PBXGroup;
 			children = (
+				E94A7E282870D97300CAF968 /* Packages */,
 				E9E0E40C2755693100322FFE /* shared */,
 				E95901B4274ADEF700801611 /* AppIcons */,
 				E94326112749AEFF005D074B /* sunshine-helper */,
@@ -302,11 +335,20 @@
 			path = "sunshine-helper WatchKit AppUITests";
 			sourceTree = "<group>";
 		};
+		E94A7E282870D97300CAF968 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				E94A7E292870D97300CAF968 /* fastrtpackage */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 		E9E0E40C2755693100322FFE /* shared */ = {
 			isa = PBXGroup;
 			children = (
 				E9E0E41027557C4A00322FFE /* wrappingstack */,
 				E95901B6275172D500801611 /* sunshine-uv-exposure-shared-api.swift */,
+				E9C8065F287223A3001CCC3A /* spectrum-helpers.swift */,
 				E9E0E40D2755695800322FFE /* shared-ui-components.swift */,
 			);
 			path = shared;
@@ -331,6 +373,7 @@
 				E943260C2749AEFF005D074B /* Frameworks */,
 				E943260D2749AEFF005D074B /* Resources */,
 				E94326732749AF02005D074B /* Embed Watch Content */,
+				E94A7E2C2870D97E00CAF968 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -338,6 +381,9 @@
 				E94326362749AF00005D074B /* PBXTargetDependency */,
 			);
 			name = "sunshine-helper";
+			packageProductDependencies = (
+				E94A7E352870DAF200CAF968 /* FastRT */,
+			);
 			productName = "sunshine-helper";
 			productReference = E943260F2749AEFF005D074B /* sunshine-helper.app */;
 			productType = "com.apple.product-type.application";
@@ -402,12 +448,17 @@
 				E943263A2749AF01005D074B /* Sources */,
 				E943263B2749AF01005D074B /* Frameworks */,
 				E943263C2749AF01005D074B /* Resources */,
+				E94A7E312870D9CA00CAF968 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E94A7E3D2870DE3D00CAF968 /* PBXTargetDependency */,
 			);
 			name = "sunshine-helper WatchKit Extension";
+			packageProductDependencies = (
+				E94A7E392870DB4600CAF968 /* FastRT */,
+			);
 			productName = "sunshine-helper WatchKit Extension";
 			productReference = E943263E2749AF01005D074B /* sunshine-helper WatchKit Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
@@ -460,6 +511,7 @@
 				TargetAttributes = {
 					E943260E2749AEFF005D074B = {
 						CreatedOnToolsVersion = 13.1;
+						LastSwiftMigration = 1310;
 					};
 					E943261E2749AF00005D074B = {
 						CreatedOnToolsVersion = 13.1;
@@ -572,8 +624,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E95901B7275172D500801611 /* sunshine-uv-exposure-shared-api.swift in Sources */,
+				E9C8065D2870E071001CCC3A /* sunshine-uv-exposure-shared-api.swift in Sources */,
 				E94326152749AEFF005D074B /* ContentView.swift in Sources */,
+				E9C80660287223A3001CCC3A /* spectrum-helpers.swift in Sources */,
 				E9E0E40E2755695800322FFE /* shared-ui-components.swift in Sources */,
 				E94326132749AEFF005D074B /* sunshine_helperApp.swift in Sources */,
 				E9E0E41227557C5A00322FFE /* wrappinghstack.swift in Sources */,
@@ -601,7 +654,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E95901B8275172D500801611 /* sunshine-uv-exposure-shared-api.swift in Sources */,
+				E96641F028738B4A002DC8DC /* spectrum-helpers.swift in Sources */,
+				E9C8065E2870E077001CCC3A /* sunshine-uv-exposure-shared-api.swift in Sources */,
 				E9E0E40F2755695800322FFE /* shared-ui-components.swift in Sources */,
 				E94326482749AF01005D074B /* NotificationController.swift in Sources */,
 				E94326462749AF01005D074B /* ContentView.swift in Sources */,
@@ -661,6 +715,10 @@
 			isa = PBXTargetDependency;
 			target = E94326322749AF00005D074B /* sunshine-helper WatchKit App */;
 			targetProxy = E94326632749AF02005D074B /* PBXContainerItemProxy */;
+		};
+		E94A7E3D2870DE3D00CAF968 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = E94A7E3C2870DE3D00CAF968 /* FastRT */;
 		};
 /* End PBXTargetDependency section */
 
@@ -781,7 +839,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_ASSET_PATHS = "\"sunshine-helper WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = SCM7P62X3K;
 				ENABLE_PREVIEWS = YES;
@@ -814,7 +872,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_ASSET_PATHS = "\"sunshine-helper WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = SCM7P62X3K;
 				ENABLE_PREVIEWS = YES;
@@ -850,7 +908,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = SCM7P62X3K;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = sunshine_helper_WatchKit_Extension;
@@ -876,7 +934,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = SCM7P62X3K;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = sunshine_helper_WatchKit_Extension;
@@ -901,9 +959,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "sunshine-helper/sunshine-helper.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_ASSET_PATHS = "\"sunshine-helper/Preview Content\"";
 				DEVELOPMENT_TEAM = SCM7P62X3K;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
@@ -927,6 +986,8 @@
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -937,9 +998,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "sunshine-helper/sunshine-helper.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_ASSET_PATHS = "\"sunshine-helper/Preview Content\"";
 				DEVELOPMENT_TEAM = SCM7P62X3K;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
@@ -963,6 +1025,7 @@
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1255,6 +1318,21 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E94A7E352870DAF200CAF968 /* FastRT */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FastRT;
+		};
+		E94A7E392870DB4600CAF968 /* FastRT */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FastRT;
+		};
+		E94A7E3C2870DE3D00CAF968 /* FastRT */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FastRT;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E94326072749AEFF005D074B /* Project object */;
 }

@@ -40,8 +40,8 @@ struct ContentView: View {
     //                Toggle ("Edit Parameters", isOn: $toggle_editing)
                      Picker("Cloud Conditions", selection: $viewModel.selected_sky_condition) {
                         Text("Cloudless").tag(e_sky_condition.e_sky_cloudless)
-            //                Text("Scattered").tag(e_sky_condition.e_sky_scattered)
-            //                Text("Broken").tag(e_sky_condition.e_sky_broken)
+                            Text("Scattered").tag(e_sky_condition.e_sky_scattered)
+                            Text("Broken").tag(e_sky_condition.e_sky_broken)
                         Text("Overcast").tag(e_sky_condition.e_sky_overcast)
                     }
                     
@@ -72,7 +72,7 @@ struct ContentView: View {
     func get_exposure_button_handler()
     {
         self.toggle_editing = false
-        self.viewModel.skin_exposed_percent = Int(self.body_exposed_percentage)
+        self.viewModel.skin_exposed_percent = self.body_exposed_percentage
         
         self.viewModel.getExposure()
     }

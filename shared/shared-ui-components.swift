@@ -74,6 +74,8 @@ struct BodyPartPicker: View {
     func update_body_exposure()
     {
         self.body_exposed_percentage =  ( self.toggle_face ? 3.5 : 0 ) + ( self.toggle_neck ? 2.0 : 0 ) + ( self.toggle_arms ? 14.0 : 0 ) + ( self.toggle_hands ? 6.0 : 0 ) + ( self.toggle_trunk ? 26.0 : 0 ) + ( self.toggle_thighs ? 18.0 : 0 ) + ( self.toggle_legs ? 14.0 : 0)
+        UserDefaults.standard.set(body_exposed_percentage,
+        forKey: "body_exposed_percentage")
     }
 }
 
