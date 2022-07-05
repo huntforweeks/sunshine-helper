@@ -75,8 +75,10 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       notificationPayloadFile = "sunshine-helper WatchKit Extension/PushNotificationPayload.apns">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.Carousel"
+         RemotePath = "/sunshine-helper WatchKit App">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E94326322749AF00005D074B"
@@ -84,7 +86,7 @@
             BlueprintName = "sunshine-helper WatchKit App"
             ReferencedContainer = "container:sunshine-helper.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -92,8 +94,10 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.Carousel"
+         RemotePath = "/sunshine-helper WatchKit App">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E94326322749AF00005D074B"
@@ -101,7 +105,16 @@
             BlueprintName = "sunshine-helper WatchKit App"
             ReferencedContainer = "container:sunshine-helper.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "E94326322749AF00005D074B"
+            BuildableName = "sunshine-helper WatchKit App.app"
+            BlueprintName = "sunshine-helper WatchKit App"
+            ReferencedContainer = "container:sunshine-helper.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
