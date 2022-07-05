@@ -53,6 +53,6 @@ int compute_atmospheric_reflectance(double o3, double beta,
 double *newton_co(int np, double *x, double *y);
 
 
-int run_fastrt (int argc, char **argv);
+int run_fastrt_(int argc, char **argv, double *doserates);
 
 #endif /* fastrt__h */

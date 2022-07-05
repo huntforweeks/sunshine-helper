@@ -40,8 +40,8 @@ struct ContentView: View {
     //                Toggle ("Edit Parameters", isOn: $toggle_editing)
                      Picker("Cloud Conditions", selection: $viewModel.selected_sky_condition) {
                         Text("Cloudless").tag(e_sky_condition.e_sky_cloudless)
-            //                Text("Scattered").tag(e_sky_condition.e_sky_scattered)
-            //                Text("Broken").tag(e_sky_condition.e_sky_broken)
+                            Text("Scattered").tag(e_sky_condition.e_sky_scattered)
+                            Text("Broken").tag(e_sky_condition.e_sky_broken)
                         Text("Overcast").tag(e_sky_condition.e_sky_overcast)
                     }
                     

@@ -41,32 +41,36 @@ struct ContentView: View {
             }
             if toggle_editing {
                 ScrollView {
-    //                Text ("Parameters for sun exposure calculations.")
-            //            Text ("Time of Sun Exposure (Note, times falling across UTC time boundaries seem to fail)")
-            //            Picker("Time of Sun Exposure", selection: $viewModel.selected_time_of_day) {
-            //                Text("Noon Today").tag(e_time_of_day_mode.e_time_of_day_around_noon)
-            //                Text("Now").tag(e_time_of_day_mode.e_time_of_day_now)
-            //                Text("Other Time & Date").tag(e_time_of_day_mode.e_time_of_day_custom_time)
-            //            }
-            //            .padding()
-            //            .pickerStyle(SegmentedPickerStyle())
-            //            if viewModel.selected_time_of_day == e_time_of_day_mode.e_time_of_day_custom_time {
-            //                DatePicker("Custom Date", selection: $viewModel.chosen_date)
-            //                    .padding()
-            //                    .disabled(viewModel.selected_time_of_day != e_time_of_day_mode.e_time_of_day_custom_time)
-            //            }
+                    Text ("Parameters for sun exposure calculations.")
+//                        Text ("Time of Sun Exposure (Note, times falling across UTC time boundaries seem to fail)")
+                    Group {
+                        Picker("Time of Sun Exposure", selection: $viewModel.selected_time_of_day) {
+                            Text("Noon Today").tag(e_time_of_day_mode.e_time_of_day_around_noon)
+                            Text("Now").tag(e_time_of_day_mode.e_time_of_day_now)
+                            Text("Other Time & Date").tag(e_time_of_day_mode.e_time_of_day_custom_time)
+                        }
+                        .padding()
+                        .pickerStyle(SegmentedPickerStyle())
+                        if viewModel.selected_time_of_day == e_time_of_day_mode.e_time_of_day_custom_time {
+                            DatePicker("Custom Date", selection: $viewModel.chosen_date)
+                                .padding()
+                                .disabled(viewModel.selected_time_of_day != e_time_of_day_mode.e_time_of_day_custom_time)
+                        }
+                    }
+                    Group {
                     Text("Cloud Conditions")
                     Picker("", selection: $viewModel.selected_sky_condition) {
                         Text("Cloudless").tag(e_sky_condition.e_sky_cloudless)
-            //                Text("Scattered").tag(e_sky_condition.e_sky_scattered)
-            //                Text("Broken").tag(e_sky_condition.e_sky_broken)
+                            Text("Scattered").tag(e_sky_condition.e_sky_scattered)
+                            Text("Broken").tag(e_sky_condition.e_sky_broken)
                         Text("Overcast").tag(e_sky_condition.e_sky_overcast)
                     }
                     .pickerStyle(SegmentedPickerStyle())
                     .padding()
+                    }
                     
                     Divider()
-                    
+                    Group {
                     let skinpercent = String(format: "%.1f", body_exposed_percentage)
                     Text("\(skinpercent)% of skin exposed, based on selections below")
                     BodyPartPicker (body_exposed_percentage: $body_exposed_percentage)
@@ -83,11 +87,12 @@ struct ContentView: View {
                     }
                     .padding()
                     .pickerStyle(SegmentedPickerStyle())
+                    }
                     
                     Divider()
             //            Slider(value: $body_exposed_percentage, in: 0...100, step: 5)
             //            .padding()
-                    Text("Data from: https://fastrt.nilu.no/README_VitD_quartMEDandMED_v2.html Note on parameters above: Time of day is hardcoded to solar noon based on your rounded gps coordinates, surface type/albedo is hardcoded to sand.")
+                    Text("Modified open source code from: https://fastrt.nilu.no/README_VitD_quartMEDandMED_v2.html")
                         .padding()
                 }
                 }

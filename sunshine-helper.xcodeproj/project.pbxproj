@@ -32,8 +32,10 @@
 		E94A7E3A2870DB4600CAF968 /* FastRT in Frameworks */ = {isa = PBXBuildFile; productRef = E94A7E392870DB4600CAF968 /* FastRT */; };
 		E94A7E3B2870DB4600CAF968 /* FastRT in Embed Frameworks */ = {isa = PBXBuildFile; productRef = E94A7E392870DB4600CAF968 /* FastRT */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		E95901B5274ADEF700801611 /* AppIcons in Resources */ = {isa = PBXBuildFile; fileRef = E95901B4274ADEF700801611 /* AppIcons */; };
+		E96641F028738B4A002DC8DC /* spectrum-helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C8065F287223A3001CCC3A /* spectrum-helpers.swift */; };
 		E9C8065D2870E071001CCC3A /* sunshine-uv-exposure-shared-api.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95901B6275172D500801611 /* sunshine-uv-exposure-shared-api.swift */; };
 		E9C8065E2870E077001CCC3A /* sunshine-uv-exposure-shared-api.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95901B6275172D500801611 /* sunshine-uv-exposure-shared-api.swift */; };
+		E9C80660287223A3001CCC3A /* spectrum-helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C8065F287223A3001CCC3A /* spectrum-helpers.swift */; };
 		E9E0E40E2755695800322FFE /* shared-ui-components.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E0E40D2755695800322FFE /* shared-ui-components.swift */; };
 		E9E0E40F2755695800322FFE /* shared-ui-components.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E0E40D2755695800322FFE /* shared-ui-components.swift */; };
 		E9E0E41227557C5A00322FFE /* wrappinghstack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E0E41127557C5A00322FFE /* wrappinghstack.swift */; };
@@ -163,7 +165,7 @@
 		E95901B3274ABD0700801611 /* sunshine-helper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "sunshine-helper.entitlements"; sourceTree = "<group>"; };
 		E95901B4274ADEF700801611 /* AppIcons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcons; sourceTree = "<group>"; };
 		E95901B6275172D500801611 /* sunshine-uv-exposure-shared-api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "sunshine-uv-exposure-shared-api.swift"; sourceTree = "<group>"; };
-		E96069BB27C584150024ABD6 /* fastrt_lib */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fastrt_lib; sourceTree = "<group>"; };
+		E9C8065F287223A3001CCC3A /* spectrum-helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "spectrum-helpers.swift"; sourceTree = "<group>"; };
 		E9E0E40D2755695800322FFE /* shared-ui-components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "shared-ui-components.swift"; sourceTree = "<group>"; };
 		E9E0E41127557C5A00322FFE /* wrappinghstack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wrappinghstack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -344,9 +346,9 @@
 		E9E0E40C2755693100322FFE /* shared */ = {
 			isa = PBXGroup;
 			children = (
-				E96069BB27C584150024ABD6 /* fastrt_lib */,
 				E9E0E41027557C4A00322FFE /* wrappingstack */,
 				E95901B6275172D500801611 /* sunshine-uv-exposure-shared-api.swift */,
+				E9C8065F287223A3001CCC3A /* spectrum-helpers.swift */,
 				E9E0E40D2755695800322FFE /* shared-ui-components.swift */,
 			);
 			path = shared;
@@ -624,6 +626,7 @@
 			files = (
 				E9C8065D2870E071001CCC3A /* sunshine-uv-exposure-shared-api.swift in Sources */,
 				E94326152749AEFF005D074B /* ContentView.swift in Sources */,
+				E9C80660287223A3001CCC3A /* spectrum-helpers.swift in Sources */,
 				E9E0E40E2755695800322FFE /* shared-ui-components.swift in Sources */,
 				E94326132749AEFF005D074B /* sunshine_helperApp.swift in Sources */,
 				E9E0E41227557C5A00322FFE /* wrappinghstack.swift in Sources */,
@@ -651,6 +654,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E96641F028738B4A002DC8DC /* spectrum-helpers.swift in Sources */,
 				E9C8065E2870E077001CCC3A /* sunshine-uv-exposure-shared-api.swift in Sources */,
 				E9E0E40F2755695800322FFE /* shared-ui-components.swift in Sources */,
 				E94326482749AF01005D074B /* NotificationController.swift in Sources */,
@@ -835,7 +839,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_ASSET_PATHS = "\"sunshine-helper WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = SCM7P62X3K;
 				ENABLE_PREVIEWS = YES;
@@ -868,7 +872,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_ASSET_PATHS = "\"sunshine-helper WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = SCM7P62X3K;
 				ENABLE_PREVIEWS = YES;
@@ -904,7 +908,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = SCM7P62X3K;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = sunshine_helper_WatchKit_Extension;
@@ -930,7 +934,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = SCM7P62X3K;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = sunshine_helper_WatchKit_Extension;
@@ -958,7 +962,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "sunshine-helper/sunshine-helper.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_ASSET_PATHS = "\"sunshine-helper/Preview Content\"";
 				DEVELOPMENT_TEAM = SCM7P62X3K;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
@@ -997,7 +1001,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "sunshine-helper/sunshine-helper.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_ASSET_PATHS = "\"sunshine-helper/Preview Content\"";
 				DEVELOPMENT_TEAM = SCM7P62X3K;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
