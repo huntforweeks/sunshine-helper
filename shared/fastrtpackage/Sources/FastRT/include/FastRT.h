@@ -23,6 +23,24 @@
 
 int run_fastrt_test_inputs(double *doserates);
 
+int get_sunrise_sunset(
+                       int *out_sunrise,
+                       int *out_sunset,
+                       int dayinyear,
+                       double latitude,
+                       double longitude,
+                       double altitude);
+
+int get_day_sun_angle_data(
+                           double* angles,
+                           int* times,
+                           int num_of_steps,
+                           int dayinyear,
+                           int seconds_from_midnight,
+                           double latitude,
+                           double longitude,
+                           double altitude);
+
 int run_fastrt(
                double* doserates,
                int startWavelength,

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftUICharts
 
 struct ContentView: View {
 //    @Environment(\.managedObjectContext) private var viewContext
@@ -16,6 +17,17 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
+            HStack {
+                VStack{
+                    Text("🌅")
+                    Text("Sunrise At 5:25 AM")
+                }
+                Spacer()
+                VStack{
+                    Text("🌄")
+                    Text("Sunset At 7:33 PM")
+                }
+            }
             HStack{
                 Toggle ("Edit Parameters", isOn: $toggle_editing)
                     .toggleStyle(customButtonToggleStyle())
@@ -33,13 +45,39 @@ struct ContentView: View {
                     .toggleStyle(customButtonToggleStyle())
                 }
             }
+            
+            if toggle_editing {
                 
-            if self.viewModel.loaded && !toggle_editing{
-                VStack{
-                Text("Time needed (hh:mm):\n" + viewModel.vitdtime + "\n" + viewModel.sunburntime)
+                ZStack{
+                    Image(uiImage: #imageLiteral(resourceName: "signal-2022-07-11-204341.jpeg"))
+                        .resizable(capInsets: SwiftUI.EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0), resizingMode: SwiftUI.Image.ResizingMode.stretch).aspectRatio(contentMode: SwiftUI.ContentMode.fit)
                 }
             }
-            if toggle_editing {
+                
+            if false && self.viewModel.loaded && !toggle_editing{
+                ScrollView {
+                    Text("Time needed (hh:mm):\n" + viewModel.vitdtime + "\n" + viewModel.sunburntime)
+                    Divider()
+                    Group {
+                        LineChartView(dataPoints: viewModel.sunAngleData.map({$0.getDataPoint()})
+                            .filter({$0.endValue > 0.0})
+                        )
+                        .chartStyle(
+                             LineChartStyle(
+                                 lineMinHeight: 50,
+                                 showAxis: false,
+                                 axisLeadingPadding: 0,
+                                 showLabels: true,
+                                 labelCount: 5,
+                                 showLegends: true,
+                                 drawing: .fill
+                             )
+                         )
+                    }
+                }
+                
+            }
+            if false && toggle_editing {
                 ScrollView {
                     Text ("Parameters for sun exposure calculations.")
 //                        Text ("Time of Sun Exposure (Note, times falling across UTC time boundaries seem to fail)")

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftUICharts
 
 struct ContentView: View {
     
@@ -33,11 +34,29 @@ struct ContentView: View {
                     }
                     if self.viewModel.loaded {
                     Text("Time needed (hh:mm):\n" + viewModel.vitdtime + "\n" + viewModel.sunburntime)
+                        LineChartView(dataPoints: viewModel.sunAngleData.map({$0.getDataPoint()})
+                            .filter({$0.endValue > 0.0})
+                        )
+                        .chartStyle(
+                             LineChartStyle(
+                                 lineMinHeight: 50,
+                                 showAxis: false,
+                                 axisLeadingPadding: 0,
+                                 showLabels: true,
+                                 labelCount: 5,
+                                 showLegends: true,
+                                 drawing: .fill
+                             )
+                         )
                     }
                 })
 
                 NavigationLink("Parameters", destination: List {
     //                Toggle ("Edit Parameters", isOn: $toggle_editing)
+                    Picker("Time of Sun Exposure", selection: $viewModel.selected_time_of_day) {
+                        Text("Noon Today").tag(e_time_of_day_mode.e_time_of_day_around_noon)
+                        Text("Now").tag(e_time_of_day_mode.e_time_of_day_now)
+                    }
                      Picker("Cloud Conditions", selection: $viewModel.selected_sky_condition) {
                         Text("Cloudless").tag(e_sky_condition.e_sky_cloudless)
                             Text("Scattered").tag(e_sky_condition.e_sky_scattered)

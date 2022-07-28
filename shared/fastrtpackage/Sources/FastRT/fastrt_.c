@@ -1265,7 +1265,11 @@ for (i=0; i<4; i++){
     }
   }
 }
-
+    // TODO Investigate weird sunset error case where the sza goes wild
+    if (y_sza[3] > 99999)
+    {
+        return 10;
+    }
 
 return (0);
 }

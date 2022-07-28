@@ -8,7 +8,6 @@
 import Foundation
 import CoreLocation
 
-
 enum e_day_of_year_mode: Int {
     case e_day_of_year_around_noon
     case e_day_of_year_custom_date
@@ -49,6 +48,9 @@ class ContentViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var vitdtime: String
     @Published var sunburntime: String
     
+    @Published var sunAngleData: [TimeAngleDataPoint]
+    @Published var spectrumDoseData: [WaveLengthDataPoint]
+    
     @Published var loading: Bool
     @Published var loaded: Bool
     
@@ -58,6 +60,10 @@ class ContentViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published public var chosen_date = Date()
     @Published public var selected_skin_type = 3
     
+    @Published public var exposure_result: fastrt_result
+    
+    // debug toggles
+    var calculateIntegral = true
     var testWebToo = false
     var debugOverrideVals = false
     var debugFastRTParams = false
@@ -75,8 +81,11 @@ class ContentViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         sunburntime = "sunburntime"
         locationManager = CLLocationManager()
         authorizationStatus = locationManager.authorizationStatus
+        spectrumDoseData = []
+        sunAngleData = []
         loading = false
         loaded = false
+        exposure_result = fastrt_result( spectrumDoseData: [])
         
         let defaults = UserDefaults.standard
         
@@ -271,12 +280,18 @@ class ContentViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
             seconds_since_midnight: seconds_since_midnight,
             sky_condition_type: self.selected_sky_condition.rawValue)
         
-//        let result = spectrum_helpers.calculateExposureIntergralTimes(
-//            params: params
-//        )
-        let result = spectrum_helpers.calculateExposureTimes(
+        
+        
+        let result = calculateIntegral ? spectrum_helpers.calculateExposureIntergralTimes(
+            params: params
+        ) : spectrum_helpers.calculateExposureTimes(
             params: params
         )
+        sunAngleData = spectrum_helpers.calculateSunAngleData(params: params, fastrtresult: result)
+        
+        spectrumDoseData = result.spectrumDoseData
+        
+        self.exposure_result = result
         
         let vitaminDDoseTimeSeconds = result.vitdtime
         let erythemaDoseTimeSeconds = result.erythematime
@@ -286,11 +301,11 @@ class ContentViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         formatter.unitsStyle = .abbreviated
         formatter.allowedUnits = [.hour, .minute, .second]
                 
-        if (vitaminDDoseTimeSeconds <= 0.0) {
+        if (result.vitdPercentDose < 1.0) {
             self.vitdtime = "Not enough time in the day to get sufficient d3"}
         else {
             self.vitdtime = "Daily d3: " + formatter.string(from: vitaminDDoseTimeSeconds)! }
-        if (erythemaDoseTimeSeconds <= 0.0) {
+        if (result.erythemaPercentDose < 1.0) {
             self.sunburntime = "Not enough time in the day to get sunburnt"}
         else {
             self.sunburntime = "Sunburn: " + formatter.string(from: erythemaDoseTimeSeconds)! }

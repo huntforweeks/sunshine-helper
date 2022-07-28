@@ -11,7 +11,11 @@ let package = Package(
             name: "FastRT",
             resources: [
                 .copy("./Resources"),
-//                .process("./Resources/TransmittancesCloudH2O0.000/rawlambdafile"),
-        ]),
+            ],
+            linkerSettings: [
+                .unsafeFlags(["-Xlinker", "-no_application_extension"])
+            ]
+        ),
     ]
+    
 )

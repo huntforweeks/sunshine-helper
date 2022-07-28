@@ -19,6 +19,62 @@ void print_debug_params(int argc, char** argv)
     }
 }
 
+int get_sunrise_sunset(
+                       int *out_sunrise,
+                       int *out_sunset,
+                       int dayinyear,
+                       double latitude,
+                       double longitude,
+                       double altitude)
+{
+    return zenith2time(dayinyear,
+                90.0, //expected angle
+                latitude,
+                longitude,
+                0.0, // timezone longitude
+                out_sunrise,
+                out_sunset);
+    
+}
+
+int get_day_sun_angle_data(
+                           double* angles,
+                           int* times,
+                           int num_of_steps,
+                           int dayinyear,
+                           int seconds_from_midnight,
+                           double latitude,
+                           double longitude,
+                           double altitude)
+{
+    int i;
+    int step_size_seconds = 86400 / num_of_steps;
+    double zenith;
+    for (i = 0; i < num_of_steps; i++)
+    {
+        seconds_from_midnight += step_size_seconds;
+        zenith = solar_zenith(seconds_from_midnight % 86400,
+                                     dayinyear,
+                                     latitude,
+                                     -1 * longitude,
+                                     0.0);
+        times[i] = seconds_from_midnight;
+        if (zenith < 0.0)
+        {
+            angles[i] = 0.0;
+        }
+        if (zenith > 90)
+        {
+            angles[i] = 90.0;
+        }
+        else
+        {
+            angles[i] = zenith;
+        }
+    }
+    return 0;
+}
+
 int run_fastrt_test_inputs(double *doserates)
 {
     
