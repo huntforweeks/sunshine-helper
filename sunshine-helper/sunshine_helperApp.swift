@@ -9,11 +9,15 @@ import SwiftUI
 
 @main
 struct sunshine_helperApp: App {
+    
+    @StateObject var sunshine_shared_api = ContentViewModel()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(sunshine_shared_api)
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
 
         }
+    
     }
 }

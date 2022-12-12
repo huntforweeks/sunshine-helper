@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+#if !os(watchOS)
+import WrappingHStack
+#endif
 
 struct customButtonToggleStyle: ToggleStyle {
     var color: Color = .blue
@@ -66,6 +69,7 @@ struct BodyPartPicker: View {
                 .padding(4)
             }
             .padding()
+            .frame(width: .infinity)
             .toggleStyle(customButtonToggleStyle())
         #endif
         }

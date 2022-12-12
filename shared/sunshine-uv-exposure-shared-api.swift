@@ -48,8 +48,13 @@ class ContentViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var vitdtime: String
     @Published var sunburntime: String
     
+    @Published var vitdtimeshort: String
+    @Published var sunburntimeshort: String
+    
     @Published var sunAngleData: [TimeAngleDataPoint]
     @Published var spectrumDoseData: [WaveLengthDataPoint]
+    @Published var erythemaActionSpectrum: [ErythemaActionSpectrumDataPoint]
+    @Published var vitaminDActionSpectrum: [VitaminDActionSpectrumDataPoint]
     
     @Published var loading: Bool
     @Published var loaded: Bool
@@ -61,6 +66,8 @@ class ContentViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published public var selected_skin_type = 3
     
     @Published public var exposure_result: fastrt_result
+    
+    @Published public var formattedResultSummary: String
     
     // debug toggles
     var calculateIntegral = true
@@ -79,13 +86,18 @@ class ContentViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         htmlstring = "nohtmlyet"
         vitdtime = "vitdtime"
         sunburntime = "sunburntime"
+        vitdtimeshort = "20m"
+        sunburntimeshort = "40m"
         locationManager = CLLocationManager()
         authorizationStatus = locationManager.authorizationStatus
         spectrumDoseData = []
         sunAngleData = []
+        erythemaActionSpectrum = []
+        vitaminDActionSpectrum = []
         loading = false
         loaded = false
         exposure_result = fastrt_result( spectrumDoseData: [])
+        formattedResultSummary = ""
         
         let defaults = UserDefaults.standard
         
@@ -114,129 +126,6 @@ class ContentViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         authorizationStatus = manager.authorizationStatus
     }
 
-    func updateResultsFromHTML(string: String)
-    {
-//        let pattern = "(?s).*vitamin.*(?<vitd>\\d+:\\d+).*sunburn.*(?<sunburn>\\d+:\\d+)"
-        let pattern1 = "(?s).*vitamin.*(\\d+:\\s*\\d+).*sunburn.*"
-        let pattern2 = "(?s).*vitamin.*sunburn.*(\\d+:s*\\d+)"
-        var part1 = Substring()
-        var part2 = Substring()
-
-        do {
-            let regex1 = try NSRegularExpression(pattern: pattern1)
-            if let match1 = regex1.firstMatch(in: string, range: NSRange(string.startIndex..., in: string)) {
-                if let part1range = Range(match1.range(at: 1), in: string) {
-                    part1 = string[part1range]
-                }
-            }
-        } catch { print(error) }
-        do {
-            let regex2 = try NSRegularExpression(pattern: pattern2)
-            if let match2 = regex2.firstMatch(in: string, range: NSRange(string.startIndex..., in: string)) {
-                if let part2range = Range(match2.range(at: 1), in: string) {
-                    part2 = string[part2range]
-                }
-            }
-        } catch { print(error) }
-        
-        self.htmlstring = string
-        if (String(part1).count < 2) {
-            self.vitdtime = "Not enough time in the day to get sufficient d3"}
-        else {
-            self.vitdtime = "Daily d3: " + String(part1)}
-        if (String(part2).count < 2) {
-            self.sunburntime = "Not enough time in the day to get sunburnt"}
-        else {
-            self.sunburntime = "Sunburn: " + String(part2)}
-        print(part1)
-        print(part2)
-        self.loaded = true
-        self.loading = false
-    }
-    
-    func getExposureWeb()
-    {
-        self.loaded = false
-        self.loading = true
-          
-        let defaults = UserDefaults.standard
-          
-          defaults.set(selected_skin_type, forKey: "skin-type")
-          defaults.set(selected_time_of_day.rawValue, forKey: "time-of-day")
-          defaults.set(selected_sky_condition.rawValue, forKey: "sky-condition-type")
-          
-          let url = URL(string: "https://fastrt.nilu.no/cgi-bin/olaeng/VitD_quartMEDandMED.cgi")!
-          var components = URLComponents(url: url, resolvingAgainstBaseURL: false)!
-          
-          // date & time math
-          let date = selected_time_of_day == e_time_of_day_mode.e_time_of_day_custom_time ? chosen_date : Date()
-          var cal = Calendar (identifier: .gregorian)
-          cal.timeZone = TimeZone(secondsFromGMT: 0)!
-          let dayinyear = Int(cal.ordinality(of: .day, in: .year, for: date) ?? 0)
-          let dayofmonth = Int(cal.component(.day, from: date))
-          let monthdayofyear = dayinyear - dayofmonth
-          let hour_utc = Double(cal.component(.hour, from: date))
-          let hour_utc_partial = hour_utc + (Double(cal.component(.minute, from: date)) / 60.0)
-          let rounded_hour_utc = round((hour_utc_partial) * 10) / 10.0
-          
-          // location
-        let latitude = self.debugOverrideVals ? self.overrideLat : locationManager.location?.coordinate.latitude
-        let longitude = self.debugOverrideVals ? self.overridelong :  locationManager.location?.coordinate.longitude
-          let roundedlat = round(latitude ?? 0)
-          let roundedlong = round(longitude ?? 0)
-        let altitude = self.debugOverrideVals ? self.overrideAlt :  locationManager.location?.altitude
-          let roundedaltitude = round(((altitude ?? 0) / 10)) / 100.0
-          
-          
-          components.queryItems = [
-              URLQueryItem(name: "month", value: String(monthdayofyear)),
-              URLQueryItem(name: "mday", value: String(dayofmonth)),
-              URLQueryItem(name: "city", value: "6"),
-              URLQueryItem(name: "location_specification", value: "1"),
-              URLQueryItem(name: "latitude", value: String(roundedlat) + "0"),
-              URLQueryItem(name: "longitude", value: String(roundedlong) + "0"),
-    //              URLQueryItem(name: "sza_override", value: "on"),
-              URLQueryItem(name: "sza_angle", value: "0"),
-              URLQueryItem(name: "skin_index", value: String(self.selected_skin_type)),
-              URLQueryItem(name: "exposure_timing", value: self.selected_time_of_day == e_time_of_day_mode.e_time_of_day_around_noon ? "0" : "1"),
-              URLQueryItem(name: "start_time", value: String(rounded_hour_utc)),
-              URLQueryItem(name: "UVI_flag", value: "0"),
-              URLQueryItem(name: "body_exposure", value: String(self.skin_exposed_percent)),
-              URLQueryItem(name: "dietary_equivalent", value: "1000"),
-              URLQueryItem(name: "sky_condition", value: String(self.selected_sky_condition.rawValue)),
-              URLQueryItem(name: "aerosol_specification", value: "0"),
-              URLQueryItem(name: "visibility", value: "50"),
-              URLQueryItem(name: "angstrom_beta", value: "0.11"),
-              URLQueryItem(name: "cloud_fraction", value: "50"),
-              URLQueryItem(name: "wc_column1", value: "400"),
-              URLQueryItem(name: "wc_column2", value: "400"),
-              URLQueryItem(name: "wc_column3", value: "100"),
-              URLQueryItem(name: "UVI", value: "3.4"),
-              URLQueryItem(name: "ozone_column", value: "350"),
-              URLQueryItem(name: "altitude", value: String(roundedaltitude)),
-              URLQueryItem(name: "surface", value: "0"),
-              URLQueryItem(name: "albedo", value: "0.03"),
-              URLQueryItem(name: "type", value: "2")
-          ]
-          
-          let query = components.url!.query
-
-          var request = URLRequest(url: url)
-          request.httpMethod = "POST"
-          request.httpBody = Data(query!.utf8)
-          request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-          
-          URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: nil).dataTask(with: request) { data, HTTPURLResponse, Error in
-              if (data != nil && data?.count != 0) {
-                  let response = String(data: data!, encoding: .utf8)
-                  
-                  DispatchQueue.main.async {
-                      self.updateResultsFromHTML(string: response?.htmlToString ?? "")
-                  }
-              }
-          }.resume()
-    }
-    
     func getExposureLocal()
     {
         self.loaded = false
@@ -290,6 +179,14 @@ class ContentViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         sunAngleData = spectrum_helpers.calculateSunAngleData(params: params, fastrtresult: result)
         
         spectrumDoseData = result.spectrumDoseData
+        if (erythemaActionSpectrum.isEmpty)
+        {
+            erythemaActionSpectrum = spectrum_helpers.getErythemaActionSpectrum()
+        }
+        if (vitaminDActionSpectrum.isEmpty)
+        {
+            vitaminDActionSpectrum = spectrum_helpers.getVitaminDActionSpectrum()
+        }
         
         self.exposure_result = result
         
@@ -297,18 +194,38 @@ class ContentViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         let erythemaDoseTimeSeconds = result.erythematime
         
         let formatter = DateComponentsFormatter()
+        let formattershort = DateComponentsFormatter()
         
-        formatter.unitsStyle = .abbreviated
+        formatter.unitsStyle = .short
         formatter.allowedUnits = [.hour, .minute, .second]
+        
+        formattershort.unitsStyle = .abbreviated
+        formattershort.allowedUnits = [.hour, .minute]
                 
         if (result.vitdPercentDose < 1.0) {
-            self.vitdtime = "Not enough time in the day to get sufficient d3"}
+            if (result.vitdPercentDose <= 0.0){
+                self.vitdtime = "There is too little radiation at the time specified to get your daily dose of D3"}
+            else{
+                self.vitdtime = "By sunset, you'll only be about \(String(format: "%.1f", result.vitdPercentDose * 100))% of the way to your daily dose of D3"}
+            self.vitdtimeshort = "\(String(format: "%.0f", result.vitdPercentDose * 100))%"
+        }
         else {
-            self.vitdtime = "Daily d3: " + formatter.string(from: vitaminDDoseTimeSeconds)! }
+            self.vitdtime = "You'll reach your daily dose of D3 in about " + formatter.string(from: vitaminDDoseTimeSeconds)!
+            self.vitdtimeshort = formattershort.string(from: vitaminDDoseTimeSeconds)!
+        }
         if (result.erythemaPercentDose < 1.0) {
-            self.sunburntime = "Not enough time in the day to get sunburnt"}
+            if (result.erythemaPercentDose <= 0.0){
+                self.sunburntime = "There is too little radiation at the time specified to get a sunburn"}
+            else{
+                self.sunburntime = "By sunset, you'll only be about \(String(format: "%.1f", result.erythemaPercentDose * 100))% of the way to a sunburn"}
+            self.sunburntimeshort = "\(String(format: "%.0f", result.erythemaPercentDose * 100))%"
+        }
         else {
-            self.sunburntime = "Sunburn: " + formatter.string(from: erythemaDoseTimeSeconds)! }
+            self.sunburntime = "You'll sunburn in about " + formatter.string(from: erythemaDoseTimeSeconds)!
+            self.sunburntimeshort = formattershort.string(from: erythemaDoseTimeSeconds)!
+        }
+        
+        formattedResultSummary = getFormattedResultString()
         
         print(self.vitdtime)
         print(self.sunburntime)
@@ -319,18 +236,79 @@ class ContentViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     func getExposure()
     {
-        if (self.testWebToo)
-        {
-            getExposureWeb()
-        }
         getExposureLocal()
     }
-}
+    
+    func getFormattedResultString() -> String
+    {
+        var result = ""
+        
+        let formatter = DateComponentsFormatter()
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .long
+        dateFormatter.timeStyle = .short
+        
+        formatter.unitsStyle = .abbreviated
+        formatter.allowedUnits = [.hour, .minute, .second]
+        var sky_string: String
+        switch (selected_sky_condition)
+        {
+        case .e_sky_cloudless:
+            sky_string = "cloudless"
+        case .e_sky_scattered:
+            sky_string = "scattered"
+        case .e_sky_broken:
+            sky_string = "broken"
+        case .e_sky_overcast:
+            sky_string = "overcast"
+        }
+        let skin_string = "\(selected_skin_type)"
+        let date_string = selected_time_of_day == e_time_of_day_mode.e_time_of_day_custom_time ?
+        dateFormatter.string(from: chosen_date) :
+    selected_time_of_day == e_time_of_day_mode.e_time_of_day_around_noon ?
+        dateFormatter.string(from: Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: Date())!)
+    : dateFormatter.string(from: Date())
+        
+        result = "\n Based on solar irradiance calculations with the following parameters: \n Percent Skin Exposed \(self.skin_exposed_percent)% \n Skin Type: \(skin_string) \n Cloud conditions \(sky_string) \n at your current location on \(date_string)"
+        
+        return result
+    }
+    
+    func getResultSiriString() -> String
+    {
+        var result = ""
+        
+        let formatter = DateComponentsFormatter()
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .long
+        dateFormatter.timeStyle = .short
+        
+        formatter.unitsStyle = .abbreviated
+        formatter.allowedUnits = [.hour, .minute, .second]
+        var sky_string: String
+        switch (selected_sky_condition)
+        {
+        case .e_sky_cloudless:
+            sky_string = "cloudless"
+        case .e_sky_scattered:
+            sky_string = "scattered"
+        case .e_sky_broken:
+            sky_string = "broken"
+        case .e_sky_overcast:
+            sky_string = "overcast"
+        }
 
-extension ContentViewModel: URLSessionDelegate {
-    public func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-       //Trust the certificate even if not valid
-       completionHandler(.useCredential,
-                         URLCredential(trust: challenge.protectionSpace.serverTrust!))
+        let skin_string = "\(selected_skin_type)"
+        let date_string = selected_time_of_day == e_time_of_day_mode.e_time_of_day_custom_time ?
+        dateFormatter.string(from: chosen_date) :
+    selected_time_of_day == e_time_of_day_mode.e_time_of_day_around_noon ?
+        dateFormatter.string(from: Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: Date())!)
+    : dateFormatter.string(from: Date())
+        
+        result = self.sunburntime + " " + self.vitdtime + "\n Based on solar irradiance calculations with the following parameters: \n Percent Skin Exposed \(self.skin_exposed_percent)% \n Skin Type: \(skin_string) \n Cloud conditions \(sky_string) \n at your current location on \(date_string)"
+        
+        return result
     }
 }

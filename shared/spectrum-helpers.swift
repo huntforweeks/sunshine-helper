@@ -44,7 +44,33 @@ struct WaveLengthDataPoint {
     {
         let sunLegend =  Legend(color: .purple, label: "UV Exposure", order: 1)
         let label = String(x) + "nm"
-        let val = !self.y.isNaN && self.y != Double.infinity ? self.y : 0.0
+        let val = !self.y.isNaN && self.y != Double.infinity && self.y != 0.0 ? log10(self.y * 100  + 1): 0.0
+        return DataPoint(startValue: 0.0, endValue: val, label: LocalizedStringKey.init(label), legend: sunLegend)
+    }
+}
+
+struct ErythemaActionSpectrumDataPoint {
+    var x: Double
+    var y: Double
+
+    func getDataPoint() -> DataPoint
+    {
+        let sunLegend =  Legend(color: .red, label: "UV Spectrum Weighting for sunburn", order: 1)
+        let label = String(x) + "nm"
+        let val = !self.y.isNaN && self.y != Double.infinity && self.y != 0.0 ? log10(self.y * 5000 + 1) : 0.0
+        return DataPoint(startValue: 0.0, endValue: val, label: LocalizedStringKey.init(label), legend: sunLegend)
+    }
+}
+
+struct VitaminDActionSpectrumDataPoint {
+    var x: Double
+    var y: Double
+
+    func getDataPoint() -> DataPoint
+    {
+        let sunLegend =  Legend(color: .green, label: "UV Spectrum Weighting for D3", order: 1)
+        let label = String(x) + "nm"
+        let val = !self.y.isNaN && self.y != Double.infinity && self.y != 0.0 ? log10(self.y * 5000 + 1)  : 0.0
         return DataPoint(startValue: 0.0, endValue: val, label: LocalizedStringKey.init(label), legend: sunLegend)
     }
 }
@@ -69,6 +95,30 @@ class spectrum_helpers {
         (FastRT.get_sunrise_sunset(&sunrise, &sunset, Int32(params.julianday), params.lat, params.long, params.altitude))
             
         return (Int(sunrise), Int(sunset))
+    }
+    
+    static func getErythemaActionSpectrum() -> [ErythemaActionSpectrumDataPoint]
+    {
+        var result : [ErythemaActionSpectrumDataPoint] = [];
+        
+        for i in 0..<c_erythema_action_spectrum.count
+        {
+            result.append(ErythemaActionSpectrumDataPoint(x:Double(290 + i), y: c_erythema_action_spectrum[i]))
+        }
+        
+        return result
+    }
+    
+    static func getVitaminDActionSpectrum() -> [VitaminDActionSpectrumDataPoint]
+    {
+        var result : [VitaminDActionSpectrumDataPoint] = [];
+        
+        for i in 0..<c_erythema_action_spectrum.count
+        {
+            result.append(VitaminDActionSpectrumDataPoint(x:Double(290 + i), y: c_vitamin_d_action_spectrum[i]))
+        }
+        
+        return result
     }
     
     static func calculateSunAngleData(params: fastrt_params, fastrtresult: fastrt_result)
@@ -121,73 +171,77 @@ class spectrum_helpers {
     }
 
     static func calculateExposureIntergralTimes(
-        params : fastrt_params)
-    -> fastrt_result
+        params : fastrt_params,
+        targetVitD: Double? = nil,
+        targetErythema: Double? = nil
+    ) -> fastrt_result
     {
+        // use static values if no targets provided
+        let vitdTarget = targetVitD ?? c_vitamin_d_dose[params.fitzpatrick_skin_type]
+        let erythemaTarget = targetErythema ?? c_erythema_dose[params.fitzpatrick_skin_type]
+        
         let sliceSizeSeconds = 600.0
-        let maxIterations = Int(86400 / sliceSizeSeconds)
+        var spectrumDoseData: [WaveLengthDataPoint] = init_spectrumDoseData()
         
         var vitaminDDoseTimeSeconds = 0.0
         var erythemaDoseTimeSeconds = 0.0
         
-        let vitdTarget = c_vitamin_d_dose[params.fitzpatrick_skin_type]
-        let erythemaTarget = c_erythema_dose[params.fitzpatrick_skin_type]
-        var vitdDose = 0.0
-        var erythemaDose = 0.0
-        
-        var spectrumDoseData: [WaveLengthDataPoint] = init_spectrumDoseData()
-        
         var sliceParams = params
+        var vitdSliceDose = 0.0
+        var erythemaSliceDose = 0.0
         
-        for sliceIndex in 0..<maxIterations
+        var sliceIndex = 0
+        var vitdReached = false
+        var erythemaReached = false
+        while (!vitdReached || !erythemaReached)
         {
             let sliceDoseRates = fastrt_doserate(params: sliceParams, silent: true, spectrumDoseData: &spectrumDoseData)
+            
             // stop summing if doserates are near-zero
             if (sliceDoseRates.0 < 1e-4 && sliceDoseRates.1 < 1e-4)
             {
                 break;
             }
-            if (vitdDose < vitdTarget)
+            if (!vitdReached && vitdSliceDose < vitdTarget)
             {
-                vitdDose += sliceDoseRates.0 * sliceSizeSeconds
-                if (vitdDose >= vitdTarget)
+                vitdSliceDose += sliceDoseRates.0 * sliceSizeSeconds
+                if (vitdSliceDose >= vitdTarget)
                 {
                     vitaminDDoseTimeSeconds = Double(sliceIndex+1) * sliceSizeSeconds
-                    let finalPartialSliceVitd = calculateDoseTime(dose: vitdDose - vitdTarget, doserate: sliceDoseRates.0)
+                    let finalPartialSliceVitd = calculateDoseTime(dose: vitdSliceDose - vitdTarget, doserate: sliceDoseRates.0)
                     vitaminDDoseTimeSeconds -= finalPartialSliceVitd
-                    vitdDose = vitdTarget;
+                    vitdSliceDose = vitdTarget;
+                    vitdReached = true
                 }
             }
-            if (erythemaDose < erythemaTarget)
+            if (!erythemaReached && erythemaSliceDose < erythemaTarget)
             {
-                erythemaDose += sliceDoseRates.1 * sliceSizeSeconds
-                if (erythemaDose >= erythemaTarget)
+                erythemaSliceDose += sliceDoseRates.1 * sliceSizeSeconds
+                if (erythemaSliceDose >= erythemaTarget)
                 {
                     erythemaDoseTimeSeconds = Double(sliceIndex+1) * sliceSizeSeconds
-                    let finalPartialSliceErythema = calculateDoseTime(dose: erythemaDose - erythemaTarget, doserate: sliceDoseRates.1)
+                    let finalPartialSliceErythema = calculateDoseTime(dose: erythemaSliceDose - erythemaTarget, doserate: sliceDoseRates.1)
                     erythemaDoseTimeSeconds -= finalPartialSliceErythema
-                    erythemaDose = erythemaTarget;
+                    erythemaSliceDose = erythemaTarget;
+                    erythemaReached = true
                 }
             }
-            // found both target times
-            if (erythemaDoseTimeSeconds > 0.0 && vitaminDDoseTimeSeconds > 0.0)
-            {
-                break;
-            }
-            sliceParams.seconds_since_midnight =
-            (sliceParams.seconds_since_midnight + Int(sliceSizeSeconds)) % 86400
-        }
-        
-        let vitdPercentDose = vitdDose/vitdTarget
-        let erythemaPercentDose = erythemaDose/erythemaTarget
 
-        return fastrt_result(
+            // increment slice index and reset slice doses
+            sliceIndex += 1
+            sliceParams.seconds_since_midnight = (sliceParams.seconds_since_midnight + Int(sliceSizeSeconds)) % 86400
+            }
+
+            let vitdPercentDose = vitdSliceDose/vitdTarget
+            let erythemaPercentDose = erythemaSliceDose/erythemaTarget
+
+            return fastrt_result(
             vitdtime: vitaminDDoseTimeSeconds,
             erythematime: erythemaDoseTimeSeconds,
             vitdPercentDose: vitdPercentDose,
             erythemaPercentDose: erythemaPercentDose,
             spectrumDoseData: spectrumDoseData)
-    }
+        }
     
     static func calculateExposureTimes(
         params : fastrt_params)
@@ -269,14 +323,15 @@ class spectrum_helpers {
             return (0.0, 0.0)
         }
         
-        var i = 0
-        while i < doserates.count
+        var i1 = 0
+        while i1 < doserates.count
         {
-            if (doserates[i] != NaN)
+            if (doserates[i1].isNaN || doserates[i1] < 0.0)
             {
-                spectrumDoseData[i].y += doserates[i]
+                doserates[i1] = 0.0;
             }
-            i+=1
+            spectrumDoseData[i1].y += doserates[i1]
+            i1+=1
         }
         
         let vitaminDDoserate = params.exposed_skin * calculate_doserate(doserates: doserates, action_spectrum: c_vitamin_d_action_spectrum)
