@@ -1,4 +1,4 @@
 # Specify filepatterns you want git to ignore.
 *.xcbkptlist
-shared/SwiftUICharts/*
-
+shared/SwiftUICharts*
+shared/wrappingstack*
